@@ -15,6 +15,14 @@ namespace AutoBooze
         public Form1()
         {
             InitializeComponent();
+            Data d = new Data();
+            textBoxLastSunday.Text = d.getLastSunday();
+            
+        }
+
+        private void quitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
