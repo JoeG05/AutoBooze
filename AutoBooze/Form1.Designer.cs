@@ -41,6 +41,8 @@
             this.labelStatus = new System.Windows.Forms.Label();
             this.buttonFillOrder = new System.Windows.Forms.Button();
             this.richTextBoxStatus = new System.Windows.Forms.RichTextBox();
+            this.buttonSendPerpetual = new System.Windows.Forms.Button();
+            this.buttonSendOrder = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +53,7 @@
             this.storeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(284, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(286, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -155,11 +157,31 @@
             this.richTextBoxStatus.TabIndex = 12;
             this.richTextBoxStatus.Text = "";
             // 
+            // buttonSendPerpetual
+            // 
+            this.buttonSendPerpetual.Location = new System.Drawing.Point(55, 255);
+            this.buttonSendPerpetual.Name = "buttonSendPerpetual";
+            this.buttonSendPerpetual.Size = new System.Drawing.Size(89, 23);
+            this.buttonSendPerpetual.TabIndex = 13;
+            this.buttonSendPerpetual.Text = "Send Perpetual";
+            this.buttonSendPerpetual.UseVisualStyleBackColor = true;
+            // 
+            // buttonSendOrder
+            // 
+            this.buttonSendOrder.Location = new System.Drawing.Point(150, 255);
+            this.buttonSendOrder.Name = "buttonSendOrder";
+            this.buttonSendOrder.Size = new System.Drawing.Size(89, 23);
+            this.buttonSendOrder.TabIndex = 14;
+            this.buttonSendOrder.Text = "Send Order";
+            this.buttonSendOrder.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(286, 293);
+            this.Controls.Add(this.buttonSendOrder);
+            this.Controls.Add(this.buttonSendPerpetual);
             this.Controls.Add(this.richTextBoxStatus);
             this.Controls.Add(this.buttonFillOrder);
             this.Controls.Add(this.labelStatus);
@@ -192,6 +214,8 @@
         private System.Windows.Forms.Label labelStatus;
         private System.Windows.Forms.Button buttonFillOrder;
         private System.Windows.Forms.RichTextBox richTextBoxStatus;
+        private System.Windows.Forms.Button buttonSendPerpetual;
+        private System.Windows.Forms.Button buttonSendOrder;
     }
 }
 
