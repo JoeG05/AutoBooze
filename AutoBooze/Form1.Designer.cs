@@ -28,14 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.storeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scotchPlainsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chathamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.labelLastSunday = new System.Windows.Forms.Label();
-            this.textBoxLastSunday = new System.Windows.Forms.TextBox();
+            this.buttonGetInventory = new System.Windows.Forms.Button();
+            this.buttonFillPerpetual = new System.Windows.Forms.Button();
+            this.labelStore = new System.Windows.Forms.Label();
+            this.labelStatus = new System.Windows.Forms.Label();
+            this.buttonFillOrder = new System.Windows.Forms.Button();
+            this.richTextBoxStatus = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,7 +51,7 @@
             this.storeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(561, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(284, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -63,7 +68,7 @@
             // 
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
             this.quitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.quitToolStripMenuItem.Text = "Quit";
             this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
             // 
@@ -80,42 +85,92 @@
             // scotchPlainsToolStripMenuItem
             // 
             this.scotchPlainsToolStripMenuItem.Name = "scotchPlainsToolStripMenuItem";
-            this.scotchPlainsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.scotchPlainsToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.scotchPlainsToolStripMenuItem.Text = "Scotch Plains";
+            this.scotchPlainsToolStripMenuItem.Click += new System.EventHandler(this.scotchPlainsToolStripMenuItem_Click);
             // 
             // chathamToolStripMenuItem
             // 
             this.chathamToolStripMenuItem.Name = "chathamToolStripMenuItem";
-            this.chathamToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.chathamToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.chathamToolStripMenuItem.Text = "Chatham";
+            this.chathamToolStripMenuItem.Click += new System.EventHandler(this.chathamToolStripMenuItem_Click);
             // 
-            // labelLastSunday
+            // buttonGetInventory
             // 
-            this.labelLastSunday.AutoSize = true;
-            this.labelLastSunday.Location = new System.Drawing.Point(12, 69);
-            this.labelLastSunday.Name = "labelLastSunday";
-            this.labelLastSunday.Size = new System.Drawing.Size(66, 13);
-            this.labelLastSunday.TabIndex = 1;
-            this.labelLastSunday.Text = "Last Sunday";
+            this.buttonGetInventory.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonGetInventory.Location = new System.Drawing.Point(15, 226);
+            this.buttonGetInventory.Name = "buttonGetInventory";
+            this.buttonGetInventory.Size = new System.Drawing.Size(82, 23);
+            this.buttonGetInventory.TabIndex = 7;
+            this.buttonGetInventory.Text = "Get Inventory";
+            this.buttonGetInventory.UseVisualStyleBackColor = true;
+            this.buttonGetInventory.Click += new System.EventHandler(this.buttonGetInventory_Click);
             // 
-            // textBoxLastSunday
+            // buttonFillPerpetual
             // 
-            this.textBoxLastSunday.Location = new System.Drawing.Point(84, 69);
-            this.textBoxLastSunday.Name = "textBoxLastSunday";
-            this.textBoxLastSunday.Size = new System.Drawing.Size(100, 20);
-            this.textBoxLastSunday.TabIndex = 2;
+            this.buttonFillPerpetual.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonFillPerpetual.Location = new System.Drawing.Point(103, 226);
+            this.buttonFillPerpetual.Name = "buttonFillPerpetual";
+            this.buttonFillPerpetual.Size = new System.Drawing.Size(82, 23);
+            this.buttonFillPerpetual.TabIndex = 8;
+            this.buttonFillPerpetual.Text = "Fill Perpetual";
+            this.buttonFillPerpetual.UseVisualStyleBackColor = true;
+            this.buttonFillPerpetual.Click += new System.EventHandler(this.buttonFillPerpetual_Click);
+            // 
+            // labelStore
+            // 
+            this.labelStore.AutoSize = true;
+            this.labelStore.Location = new System.Drawing.Point(9, 33);
+            this.labelStore.Name = "labelStore";
+            this.labelStore.Size = new System.Drawing.Size(93, 13);
+            this.labelStore.TabIndex = 9;
+            this.labelStore.Text = "No store selected.";
+            // 
+            // labelStatus
+            // 
+            this.labelStatus.AutoSize = true;
+            this.labelStatus.Location = new System.Drawing.Point(12, 56);
+            this.labelStatus.Name = "labelStatus";
+            this.labelStatus.Size = new System.Drawing.Size(38, 13);
+            this.labelStatus.TabIndex = 10;
+            this.labelStatus.Text = "status:";
+            // 
+            // buttonFillOrder
+            // 
+            this.buttonFillOrder.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonFillOrder.Location = new System.Drawing.Point(191, 226);
+            this.buttonFillOrder.Name = "buttonFillOrder";
+            this.buttonFillOrder.Size = new System.Drawing.Size(75, 23);
+            this.buttonFillOrder.TabIndex = 11;
+            this.buttonFillOrder.Text = "Fill Order";
+            this.buttonFillOrder.UseVisualStyleBackColor = true;
+            this.buttonFillOrder.Click += new System.EventHandler(this.buttonFillOrder_Click);
+            // 
+            // richTextBoxStatus
+            // 
+            this.richTextBoxStatus.Location = new System.Drawing.Point(12, 72);
+            this.richTextBoxStatus.Name = "richTextBoxStatus";
+            this.richTextBoxStatus.Size = new System.Drawing.Size(254, 148);
+            this.richTextBoxStatus.TabIndex = 12;
+            this.richTextBoxStatus.Text = "";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(561, 309);
-            this.Controls.Add(this.textBoxLastSunday);
-            this.Controls.Add(this.labelLastSunday);
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.richTextBoxStatus);
+            this.Controls.Add(this.buttonFillOrder);
+            this.Controls.Add(this.labelStatus);
+            this.Controls.Add(this.labelStore);
+            this.Controls.Add(this.buttonFillPerpetual);
+            this.Controls.Add(this.buttonGetInventory);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "AutoBooze";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -131,8 +186,12 @@
         private System.Windows.Forms.ToolStripMenuItem storeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem scotchPlainsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem chathamToolStripMenuItem;
-        private System.Windows.Forms.Label labelLastSunday;
-        private System.Windows.Forms.TextBox textBoxLastSunday;
+        private System.Windows.Forms.Button buttonGetInventory;
+        private System.Windows.Forms.Button buttonFillPerpetual;
+        private System.Windows.Forms.Label labelStore;
+        private System.Windows.Forms.Label labelStatus;
+        private System.Windows.Forms.Button buttonFillOrder;
+        private System.Windows.Forms.RichTextBox richTextBoxStatus;
     }
 }
 
