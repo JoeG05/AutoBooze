@@ -20,10 +20,7 @@ namespace AutoBooze
         public Form1()
         {
             InitializeComponent();
-            
-            
-            
-            
+           
         }
         
         private void quitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -48,7 +45,7 @@ namespace AutoBooze
         private void chathamToolStripMenuItem_Click(object sender, EventArgs e)
         {
             labelStore.Text = "Chatham";
-            richTextBoxStatus.Text += "Loading config file.";
+            richTextBoxStatus.Text += "Loading config file.\n";
             string status = c.loadConfig(@"C:\Dropbox\Work\Chatham.config");
             richTextBoxStatus.Text += status;
 
@@ -80,7 +77,7 @@ namespace AutoBooze
         {
             if (labelStore.Text == "Chatham")
             {
-                richTextBoxStatus.Text += "No order guide set up\n";
+                richTextBoxStatus.Text += "No order guide set up.\n";
                 return;
             }
             richTextBoxStatus.Text += "Filling Order Guide\n";
@@ -102,6 +99,22 @@ namespace AutoBooze
             string body = "See attached. \nJoe";
             richTextBoxStatus.Text += "Coming soon\n";
             //m.sendEMail(c.attributes["FromAddress"], c.attributes["Password"], c.attributes["ToAddress"], subject, body, d.getOrderSaveAsLocation());
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string aboutText = "Test";
+            MessageBox.Show(aboutText, "AutoBooze v1.0.1");
+        }
+
+        private void chathamToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(@"C:\Dropbox\Work\Chatham.config");
+        }
+
+        private void scotchPlainsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(@"C:\Dropbox\Work\SP.config");
         }
     }
 }
