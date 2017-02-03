@@ -15,7 +15,8 @@ namespace AutoBooze
     {
         Data d = new Data();
         Config c = new Config();
-        Email e = new Email();
+        Email m = new Email();
+
         public Form1()
         {
             InitializeComponent();
@@ -70,6 +71,7 @@ namespace AutoBooze
 
         private void buttonFillPerpetual_Click(object sender, EventArgs e)
         {
+            richTextBoxStatus.Text += "Filling perpetual\n";
             d.fillPerpetual();
             richTextBoxStatus.Text += "Perpetual Completed\n";
         }
@@ -81,8 +83,25 @@ namespace AutoBooze
                 richTextBoxStatus.Text += "No order guide set up\n";
                 return;
             }
+            richTextBoxStatus.Text += "Filling Order Guide\n";
             d.fillOrderSheet();
             richTextBoxStatus.Text += "Order Guide Filled\n";
+        }
+
+        private void buttonSendPerpetual_Click(object sender, EventArgs e)
+        {
+            string subject = labelStore.Text + " perpetual";
+            string body = "See attached. \nJoe";
+            richTextBoxStatus.Text += "Coming soon\n";
+            //m.sendEMail(c.attributes["FromAddress"], c.attributes["Password"], c.attributes["ToAddress"], subject, body, d.getperpetualSaveAsLocation());
+        }
+
+        private void buttonSendOrder_Click(object sender, EventArgs e)
+        {
+            string subject = labelStore.Text + " perpetual";
+            string body = "See attached. \nJoe";
+            richTextBoxStatus.Text += "Coming soon\n";
+            //m.sendEMail(c.attributes["FromAddress"], c.attributes["Password"], c.attributes["ToAddress"], subject, body, d.getOrderSaveAsLocation());
         }
     }
 }

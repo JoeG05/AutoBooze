@@ -165,6 +165,7 @@
             this.buttonSendPerpetual.TabIndex = 13;
             this.buttonSendPerpetual.Text = "Send Perpetual";
             this.buttonSendPerpetual.UseVisualStyleBackColor = true;
+            this.buttonSendPerpetual.Click += new System.EventHandler(this.buttonSendPerpetual_Click);
             // 
             // buttonSendOrder
             // 
@@ -174,6 +175,7 @@
             this.buttonSendOrder.TabIndex = 14;
             this.buttonSendOrder.Text = "Send Order";
             this.buttonSendOrder.UseVisualStyleBackColor = true;
+            this.buttonSendOrder.Click += new System.EventHandler(this.buttonSendOrder_Click);
             // 
             // Form1
             // 

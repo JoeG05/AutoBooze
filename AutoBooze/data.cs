@@ -32,6 +32,10 @@ namespace AutoBooze
             perpetualSaveAsLocation = location + "Perpetual-WE-" + getNextSunday() + ".xlsx";
         }
 
+        public string getperpetualSaveAsLocation()
+        {
+            return perpetualSaveAsLocation;
+        }
         public void setOrderLocation(string location)
         {
             orderLocation = location;
@@ -40,6 +44,11 @@ namespace AutoBooze
         public void setOrderSaveAsLocation(string location)
         {
             orderSaveAsLocation = location + "SP-" + getToday() + ".xlsx";
+        }
+
+        public string getOrderSaveAsLocation()
+        {
+            return orderSaveAsLocation;
         }
         
         public SalesData sales;
