@@ -105,6 +105,7 @@ namespace AutoBooze
         {
             string aboutText = "Test";
             MessageBox.Show(aboutText, "AutoBooze v1.0.1");
+            
         }
 
         private void chathamToolStripMenuItem1_Click(object sender, EventArgs e)
