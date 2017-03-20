@@ -83,7 +83,7 @@ namespace AutoBooze
         public void getInventory()
         {
             char[] delimiterChars = { ',' };
-            string[] productCodes = { "584-10", "584-30", "55-00", "580-00", "581-00", "587-00" };
+            string[] productCodes = { "584-10", "584-30", "555-00", "580-00", "581-00", "587-00" };
             string line;
 
             StreamReader file = new StreamReader(reportLocation);
