@@ -61,6 +61,11 @@ namespace AutoBooze
                 richTextBoxStatus.Text += "Select Location.\n";
                 return;
             }
+            if (!(File.Exists(d.reportLocation)))
+            {
+                richTextBoxStatus.Text += "Report not found.\n";
+                return;
+            }
             richTextBoxStatus.Text += "Loading Inventory\n";
             d.getInventory();
             richTextBoxStatus.Text += "Inventory Loaded\n";
@@ -68,6 +73,11 @@ namespace AutoBooze
 
         private void buttonFillPerpetual_Click(object sender, EventArgs e)
         {
+            if (!(File.Exists(d.perpetualLocation)))
+            {
+                richTextBoxStatus.Text += "Perpetual not found.\n";
+                return;
+            }
             richTextBoxStatus.Text += "Filling perpetual\n";
             d.fillPerpetual();
             richTextBoxStatus.Text += "Perpetual Completed\n";
@@ -80,6 +90,12 @@ namespace AutoBooze
                 richTextBoxStatus.Text += "No order guide set up.\n";
                 return;
             }
+
+            if (!(File.Exists(d.orderLocation)))
+            {
+                richTextBoxStatus.Text += "Order guide not found.\n";
+                return;
+            }
             richTextBoxStatus.Text += "Filling Order Guide\n";
             d.fillOrderSheet();
             richTextBoxStatus.Text += "Order Guide Filled\n";
@@ -87,18 +103,12 @@ namespace AutoBooze
 
         private void buttonSendPerpetual_Click(object sender, EventArgs e)
         {
-            string subject = labelStore.Text + " perpetual";
-            string body = "See attached. \nJoe";
-            richTextBoxStatus.Text += "Coming soon\n";
-            //m.sendEMail(c.attributes["FromAddress"], c.attributes["Password"], c.attributes["ToAddress"], subject, body, d.getperpetualSaveAsLocation());
+            
         }
 
         private void buttonSendOrder_Click(object sender, EventArgs e)
         {
-            string subject = labelStore.Text + " perpetual";
-            string body = "See attached. \nJoe";
-            richTextBoxStatus.Text += "Coming soon\n";
-            //m.sendEMail(c.attributes["FromAddress"], c.attributes["Password"], c.attributes["ToAddress"], subject, body, d.getOrderSaveAsLocation());
+            
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -110,12 +120,24 @@ namespace AutoBooze
 
         private void chathamToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(@"C:\Dropbox\Work\Chatham.config");
+            string configLocation = @"C:\Dropbox\Work\Chatham.config";
+            if (!(File.Exists(configLocation)))
+            {
+                richTextBoxStatus.Text += "Config file not found.\n";
+                return;
+            }
+            System.Diagnostics.Process.Start(configLocation);
         }
 
         private void scotchPlainsToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(@"C:\Dropbox\Work\SP.config");
+            string configLocation = @"C:\Dropbox\Work\SP.config";
+            if (!(File.Exists(configLocation)))
+            {
+                richTextBoxStatus.Text += "Config file not found.\n";
+                return;
+            }
+            System.Diagnostics.Process.Start(configLocation);
         }
     }
 }

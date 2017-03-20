@@ -36,6 +36,7 @@ namespace AutoBooze
         {
             return perpetualSaveAsLocation;
         }
+
         public void setOrderLocation(string location)
         {
             orderLocation = location;
@@ -86,6 +87,7 @@ namespace AutoBooze
             string[] productCodes = { "584-10", "584-30", "555-00", "580-00", "581-00", "587-00" };
             string line;
 
+           
             StreamReader file = new StreamReader(reportLocation);
 
             while ((line = file.ReadLine()) != null)

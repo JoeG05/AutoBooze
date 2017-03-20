@@ -35,6 +35,10 @@
             this.storeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scotchPlainsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chathamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.configToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chathamToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.scotchPlainsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonGetInventory = new System.Windows.Forms.Button();
             this.buttonFillPerpetual = new System.Windows.Forms.Button();
             this.labelStore = new System.Windows.Forms.Label();
@@ -43,10 +47,6 @@
             this.richTextBoxStatus = new System.Windows.Forms.RichTextBox();
             this.buttonSendPerpetual = new System.Windows.Forms.Button();
             this.buttonSendOrder = new System.Windows.Forms.Button();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.configToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.chathamToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.scotchPlainsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,7 +76,7 @@
             // 
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
             this.quitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.quitToolStripMenuItem.Text = "&Quit";
             this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
             // 
@@ -93,16 +93,46 @@
             // scotchPlainsToolStripMenuItem
             // 
             this.scotchPlainsToolStripMenuItem.Name = "scotchPlainsToolStripMenuItem";
-            this.scotchPlainsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.scotchPlainsToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.scotchPlainsToolStripMenuItem.Text = "&Scotch Plains";
             this.scotchPlainsToolStripMenuItem.Click += new System.EventHandler(this.scotchPlainsToolStripMenuItem_Click);
             // 
             // chathamToolStripMenuItem
             // 
             this.chathamToolStripMenuItem.Name = "chathamToolStripMenuItem";
-            this.chathamToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.chathamToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.chathamToolStripMenuItem.Text = "&Chatham";
             this.chathamToolStripMenuItem.Click += new System.EventHandler(this.chathamToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.aboutToolStripMenuItem.Text = "&About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // configToolStripMenuItem
+            // 
+            this.configToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.chathamToolStripMenuItem1,
+            this.scotchPlainsToolStripMenuItem1});
+            this.configToolStripMenuItem.Name = "configToolStripMenuItem";
+            this.configToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.configToolStripMenuItem.Text = "&Config";
+            // 
+            // chathamToolStripMenuItem1
+            // 
+            this.chathamToolStripMenuItem1.Name = "chathamToolStripMenuItem1";
+            this.chathamToolStripMenuItem1.Size = new System.Drawing.Size(144, 22);
+            this.chathamToolStripMenuItem1.Text = "&Chatham";
+            this.chathamToolStripMenuItem1.Click += new System.EventHandler(this.chathamToolStripMenuItem1_Click);
+            // 
+            // scotchPlainsToolStripMenuItem1
+            // 
+            this.scotchPlainsToolStripMenuItem1.Name = "scotchPlainsToolStripMenuItem1";
+            this.scotchPlainsToolStripMenuItem1.Size = new System.Drawing.Size(144, 22);
+            this.scotchPlainsToolStripMenuItem1.Text = "&Scotch Plains";
+            this.scotchPlainsToolStripMenuItem1.Click += new System.EventHandler(this.scotchPlainsToolStripMenuItem1_Click);
             // 
             // buttonGetInventory
             // 
@@ -170,7 +200,6 @@
             // 
             // buttonSendPerpetual
             // 
-            this.buttonSendPerpetual.Enabled = false;
             this.buttonSendPerpetual.Location = new System.Drawing.Point(55, 255);
             this.buttonSendPerpetual.Name = "buttonSendPerpetual";
             this.buttonSendPerpetual.Size = new System.Drawing.Size(89, 23);
@@ -191,36 +220,6 @@
             this.buttonSendOrder.Text = "Send Order";
             this.buttonSendOrder.UseVisualStyleBackColor = true;
             this.buttonSendOrder.Click += new System.EventHandler(this.buttonSendOrder_Click);
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.aboutToolStripMenuItem.Text = "&About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
-            // 
-            // configToolStripMenuItem
-            // 
-            this.configToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.chathamToolStripMenuItem1,
-            this.scotchPlainsToolStripMenuItem1});
-            this.configToolStripMenuItem.Name = "configToolStripMenuItem";
-            this.configToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
-            this.configToolStripMenuItem.Text = "&Config";
-            // 
-            // chathamToolStripMenuItem1
-            // 
-            this.chathamToolStripMenuItem1.Name = "chathamToolStripMenuItem1";
-            this.chathamToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.chathamToolStripMenuItem1.Text = "&Chatham";
-            this.chathamToolStripMenuItem1.Click += new System.EventHandler(this.chathamToolStripMenuItem1_Click);
-            // 
-            // scotchPlainsToolStripMenuItem1
-            // 
-            this.scotchPlainsToolStripMenuItem1.Name = "scotchPlainsToolStripMenuItem1";
-            this.scotchPlainsToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.scotchPlainsToolStripMenuItem1.Text = "&Scotch Plains";
-            this.scotchPlainsToolStripMenuItem1.Click += new System.EventHandler(this.scotchPlainsToolStripMenuItem1_Click);
             // 
             // Form1
             // 
