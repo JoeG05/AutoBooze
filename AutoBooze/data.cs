@@ -61,6 +61,7 @@ namespace AutoBooze
         public string perpetualSaveAsLocation;
         public string orderLocation;
         public string orderSaveAsLocation;
+        public int storeNum;
 
         public string getLastSunday()
         {
@@ -111,13 +112,31 @@ namespace AutoBooze
             file.Close();
         }
 
-        public void fillPerpetual()
+        public void fillPerpetual(int store)
         {
             Excel.Application xl = new Excel.Application();
             Excel.Workbook xlWorkbook = xl.Workbooks.Open(perpetualLocation);
             Excel.Worksheet xlSheet = xlWorkbook.Sheets[1];
             Excel.Range xlRange = xlSheet.UsedRange;
             int rowCount = xlRange.Rows.Count;
+
+            System.IO.StreamWriter logFile;
+            switch(store)
+            {
+                case 24:
+                    logFile = new System.IO.StreamWriter(@"C:\Dropbox\Work\Chatham\log " + getToday() + ".txt");
+                    break;
+
+                case 27:
+                    logFile = new System.IO.StreamWriter(@"C:\Dropbox\Work\log " + getToday() + ".txt");
+                    break;
+
+                default:
+                    logFile = new System.IO.StreamWriter(@"C:\Dropbox\Work\log (nostore) " + getToday() + ".txt");
+                    break;
+            }
+            
+            List<string> errorList = new List<string>();
 
             for (int i = 1; i < rowCount; i++)
             {
@@ -130,8 +149,16 @@ namespace AutoBooze
                 {
                     xlRange.Cells[i, 3].Value2 = d[item].OH;
                 }
+                if (!d.ContainsKey(item))
+                {
+                    errorList.Add(item);
+                }
             }
 
+            foreach (string x in errorList)
+                logFile.WriteLine(x);
+
+            logFile.Close();
             xlWorkbook.SaveAs(perpetualSaveAsLocation);
             xlWorkbook.Close();
         }
