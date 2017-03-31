@@ -29,6 +29,7 @@ namespace AutoBooze
                 attribute = attribute.Trim();
                 value = value.Trim();
 
+                
                 attributes.Add(attribute, value);
             }
             configFile.Close();

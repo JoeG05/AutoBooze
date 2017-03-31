@@ -35,6 +35,7 @@ namespace AutoBooze
             string status = c.loadConfig(@"C:\Dropbox\Work\SP.config");
             richTextBoxStatus.Text += status;
 
+            d.storeNum = 27;
             d.setReportLocation(@c.attributes["ReportLocation"]);
             d.setPerpetualLocation(@c.attributes["BlankPerpetualLocation"]);
             d.setPerpetualSaveAsLocation(@c.attributes["PerpetualSaveAs"]);
@@ -49,6 +50,7 @@ namespace AutoBooze
             string status = c.loadConfig(@"C:\Dropbox\Work\Chatham.config");
             richTextBoxStatus.Text += status;
 
+            d.storeNum = 24;
             d.setReportLocation(@c.attributes["ReportLocation"]);
             d.setPerpetualLocation(@c.attributes["BlankPerpetualLocation"]);
             d.setPerpetualSaveAsLocation(@c.attributes["PerpetualSaveAs"]);
@@ -81,7 +83,7 @@ namespace AutoBooze
                 return;
             }
             richTextBoxStatus.Text += "Filling perpetual\n";
-            d.fillPerpetual();
+            d.fillPerpetual(d.storeNum);
             richTextBoxStatus.Text += "Perpetual Completed\n";
         }
 
