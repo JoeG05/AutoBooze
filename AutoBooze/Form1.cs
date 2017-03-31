@@ -52,6 +52,8 @@ namespace AutoBooze
             d.setReportLocation(@c.attributes["ReportLocation"]);
             d.setPerpetualLocation(@c.attributes["BlankPerpetualLocation"]);
             d.setPerpetualSaveAsLocation(@c.attributes["PerpetualSaveAs"]);
+            d.setOrderLocation(@c.attributes["BlankOrderLocation"]);
+            d.setOrderSaveAsLocation(@c.attributes[("OrderSaveAs")]);
         }
 
         private void buttonGetInventory_Click(object sender, EventArgs e)
@@ -85,11 +87,7 @@ namespace AutoBooze
 
         private void buttonFillOrder_Click(object sender, EventArgs e)
         {
-            if (labelStore.Text == "Chatham")
-            {
-                richTextBoxStatus.Text += "No order guide set up.\n";
-                return;
-            }
+            
 
             if (!(File.Exists(d.orderLocation)))
             {
