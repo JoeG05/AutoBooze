@@ -85,6 +85,8 @@ namespace AutoBooze
             richTextBoxStatus.Text += "Filling perpetual\n";
             d.fillPerpetual(d.storeNum);
             richTextBoxStatus.Text += "Perpetual Completed\n";
+            d.finishPerpetual();
+            richTextBoxStatus.Text += "Last weeks perpetual finished\n";
         }
 
         private void buttonFillOrder_Click(object sender, EventArgs e)
