@@ -44,7 +44,7 @@ namespace AutoBooze
 
         public void setOrderSaveAsLocation(string location)
         {
-            orderSaveAsLocation = location + "SP-" + getToday() + ".xlsx";
+            orderSaveAsLocation = location + "SP-" + getToday() + ".xls";
         }
 
         public string getOrderSaveAsLocation()
@@ -112,6 +112,34 @@ namespace AutoBooze
             file.Close();
         }
 
+        public void finishPerpetual()
+        {
+            Excel.Application xl = new Excel.Application();
+            string file = @"C:\Dropbox\Work\Inventory\Perpetual-WE-" + getLastSunday() + ".xlsx";
+            Excel.Workbook xlWorkbook = xl.Workbooks.Open(file);
+            Excel.Worksheet xlSheet = xlWorkbook.Sheets[1];
+            Excel.Range xlRange = xlSheet.UsedRange;
+            int rowCount = xlRange.Rows.Count;
+
+            for (int i = 1; i < rowCount; i++)
+            {
+                string item = (string)(xlRange.Cells[i, 1] as Excel.Range).Value2;
+
+                if (item == null)
+                    continue;
+
+                if (d.ContainsKey(item))
+                {
+                    xlRange.Cells[i, 14].Value2 = d[item].OH;
+                }
+            }
+
+            xlWorkbook.Save();
+            xlWorkbook.Close();
+
+
+
+        }
         public void fillPerpetual(int store)
         {
             Excel.Application xl = new Excel.Application();
