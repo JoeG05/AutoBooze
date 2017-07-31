@@ -32,7 +32,7 @@ namespace AutoBooze
         {
             labelStore.Text = "Scotch Plains";
             richTextBoxStatus.Text += "Loading config file.\n";
-            string status = c.loadConfig(@"C:\Dropbox\Work\SP.config");
+            string status = c.loadConfig(@"E:\Dropbox\Work\SP.config");
             richTextBoxStatus.Text += status;
 
             d.storeNum = 27;
@@ -47,7 +47,7 @@ namespace AutoBooze
         {
             labelStore.Text = "Chatham";
             richTextBoxStatus.Text += "Loading config file.\n";
-            string status = c.loadConfig(@"C:\Dropbox\Work\Chatham.config");
+            string status = c.loadConfig(@"E:\Dropbox\Work\Chatham.config");
             richTextBoxStatus.Text += status;
 
             d.storeNum = 24;
@@ -122,7 +122,7 @@ namespace AutoBooze
 
         private void chathamToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            string configLocation = @"C:\Dropbox\Work\Chatham.config";
+            string configLocation = @"E:\Dropbox\Work\Chatham.config";
             if (!(File.Exists(configLocation)))
             {
                 richTextBoxStatus.Text += "Config file not found.\n";
@@ -133,7 +133,7 @@ namespace AutoBooze
 
         private void scotchPlainsToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            string configLocation = @"C:\Dropbox\Work\SP.config";
+            string configLocation = @"E:\Dropbox\Work\SP.config";
             if (!(File.Exists(configLocation)))
             {
                 richTextBoxStatus.Text += "Config file not found.\n";

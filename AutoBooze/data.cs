@@ -115,7 +115,7 @@ namespace AutoBooze
         public void finishPerpetual()
         {
             Excel.Application xl = new Excel.Application();
-            string file = @"C:\Dropbox\Work\Inventory\Perpetual-WE-" + getLastSunday() + ".xlsx";
+            string file = @"E:\Dropbox\Work\Inventory\Perpetual-WE-" + getLastSunday() + ".xlsx";
             Excel.Workbook xlWorkbook = xl.Workbooks.Open(file);
             Excel.Worksheet xlSheet = xlWorkbook.Sheets[1];
             Excel.Range xlRange = xlSheet.UsedRange;
@@ -152,15 +152,15 @@ namespace AutoBooze
             switch(store)
             {
                 case 24:
-                    logFile = new System.IO.StreamWriter(@"C:\Dropbox\Work\Chatham\log " + getToday() + ".txt");
+                    logFile = new System.IO.StreamWriter(@"E:\Dropbox\Work\Chatham\log " + getToday() + ".txt");
                     break;
 
                 case 27:
-                    logFile = new System.IO.StreamWriter(@"C:\Dropbox\Work\log " + getToday() + ".txt");
+                    logFile = new System.IO.StreamWriter(@"E:\Dropbox\Work\log " + getToday() + ".txt");
                     break;
 
                 default:
-                    logFile = new System.IO.StreamWriter(@"C:\Dropbox\Work\log (nostore) " + getToday() + ".txt");
+                    logFile = new System.IO.StreamWriter(@"E:\Dropbox\Work\log (nostore) " + getToday() + ".txt");
                     break;
             }
             
