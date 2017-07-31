@@ -94,7 +94,7 @@ namespace AutoBooze
             while ((line = file.ReadLine()) != null)
             {
                 string[] words = line.Split(delimiterChars);
-                if(words[0] != productCodes[0] &&
+                if (words[0] != productCodes[0] &&
                     words[0] != productCodes[1] &&
                     words[0] != productCodes[2] &&
                     words[0] != productCodes[3] &&
