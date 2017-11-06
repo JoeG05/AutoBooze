@@ -44,7 +44,7 @@ namespace AutoBooze
 
         public void setOrderSaveAsLocation(string location)
         {
-            orderSaveAsLocation = location + "SP-" + getToday() + ".xls";
+            orderSaveAsLocation = location + "SP-" + getToday() + ".xlsx";
         }
 
         public string getOrderSaveAsLocation()
